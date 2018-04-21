@@ -105,7 +105,7 @@ function bookList5() {
     }
 }
 
-bookList5();
+
 
 //6. Beautify your html page with css, add sources and alts to each of the images.
 
@@ -114,3 +114,52 @@ bookList5();
 //   gives you an array containing the keys). Then write a function which places an image at the corresponding li element. 
 //   Remember that Objects are not ordered, so you cannot guarantee that the first key is the first li element. 
 //   (Hint: you could give each li item an id tag by modifying the function you made before)
+
+var bookNamesArr3 = [
+    { id: "love_actually", img:"love_actually.jpeg", title: "Love Actually", language: "English", author: "James Smith" },
+    { id: "beloved", img: "beloved.jpg", title: "Beloved", language: "English", author: "Bob Jones" },
+    { id: "twisted", img: "twisted.jpg", title: "Twisted", language: "English", author: "Laurie Andersen" },
+    { id: "explosion", img:"explosion", title: "Explosion", language: "English", author: "John Bacon" },
+    { id: "food_godess", img:"food_godess.jpg", title: "Food Godess", language: "Spanish", author: "Maria Gonzales" },
+    { id: "queen_bee", img:"queen_bee.jpg", title: "Queen Bee", language: "Spanish", author: "Rosa Lopez" },
+    { id: "motherhood", img:"motherhood.jpg", title: "Motherhood", language: "Swedish", author: "Malin Larsson" },
+    { id: "parents_guide", img: "parents_guide.jpg", title: "Parent's Guide", language: "Swedish", author: "Ove Andersson" },
+    { id: "wonderland", img: "wonderland.jpg", title: "Wonderland", language: "English", author: "Jack Banner" },
+    { id: "peter_pan", img: "peter_pan", title: "Peter Pan", language: "Swedish", author: "James Barrie" },
+];
+
+function bookList5() {
+    for (var i = 0; i < bookNamesArr2.length; i++) {                                 //because i want this to run through the array
+        var listItemT = document.createElement("h3");                                //creates <h3>
+        var itemTextT = document.createTextNode(bookNamesArr2[i].title);             //creates text using the array title:
+        listItemT.appendChild(itemTextT);
+
+        var image= document.createElement("img");
+        image.setAttribute("src", bookNamesArr2[i].img);
+        image.setAttribute("width", "20%");
+        image.setAttribute("alt", "Book Covers");
+
+        var listItemL = document.createElement("LI");                                //creates <li>
+        var itemTextL = document.createTextNode(bookNamesArr2[i].language);          //creates text using the array language:
+        listItemL.appendChild(itemTextL);
+        var listItemA = document.createElement("LI");                                //creates <li>
+        var itemTextA = document.createTextNode(bookNamesArr2[i].author);            //creates text using the array author:
+        listItemA.appendChild(itemTextA);
+
+        document.getElementById("libro2").appendChild(listItemT);    //appends-adds <h2> to the DOM
+        document.getElementById("libro2").appendChild(image);
+        document.getElementById("libro2").appendChild(listItemL);    //appends-adds <li> to the DOM
+        document.getElementById("libro2").appendChild(listItemA);    //appends-adds <li> to the DOM
+    }
+}
+
+bookList5();
+
+/*
+var x = document.createElement("IMG");
+    x.setAttribute("src", "img_pulpit.jpg");
+    x.setAttribute("width", "304");
+    x.setAttribute("height", "228");
+    x.setAttribute("alt", "The Pulpit Rock");
+    document.body.appendChild(x);
+    */
