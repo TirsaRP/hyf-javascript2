@@ -119,13 +119,13 @@ var bookNamesArr3 = [
     { id: "love_actually", img:"love_actually.jpeg", title: "Love Actually", language: "English", author: "James Smith" },
     { id: "beloved", img: "beloved.jpg", title: "Beloved", language: "English", author: "Bob Jones" },
     { id: "twisted", img: "twisted.jpg", title: "Twisted", language: "English", author: "Laurie Andersen" },
-    { id: "explosion", img:"explosion", title: "Explosion", language: "English", author: "John Bacon" },
+    { id: "explosion", img:"explosion.jpg", title: "Explosion", language: "English", author: "John Bacon" },
     { id: "food_godess", img:"food_godess.jpg", title: "Food Godess", language: "Spanish", author: "Maria Gonzales" },
-    { id: "queen_bee", img:"queen_bee.jpg", title: "Queen Bee", language: "Spanish", author: "Rosa Lopez" },
+    { id: "queen_bee", img: "queenbee.jpg", title: "Queen Bee", language: "Spanish", author: "Rosa Lopez" },
     { id: "motherhood", img:"motherhood.jpg", title: "Motherhood", language: "Swedish", author: "Malin Larsson" },
     { id: "parents_guide", img: "parents_guide.jpg", title: "Parent's Guide", language: "Swedish", author: "Ove Andersson" },
     { id: "wonderland", img: "wonderland.jpg", title: "Wonderland", language: "English", author: "Jack Banner" },
-    { id: "peter_pan", img: "peter_pan", title: "Peter Pan", language: "Swedish", author: "James Barrie" },
+    { id: "peter_pan", img: "peter_pan.jpg", title: "Peter Pan", language: "Swedish", author: "James Barrie" },
 ];
 
 function bookList5() {
@@ -135,9 +135,9 @@ function bookList5() {
         listItemT.appendChild(itemTextT);
 
         var image= document.createElement("img");
-        image.setAttribute("src", bookNamesArr2[i].img);
-        image.setAttribute("width", "20%");
-        image.setAttribute("alt", "Book Covers");
+        image.setAttribute("src", bookNamesArr3[i].img);
+        image.setAttribute("width", "25%");
+        image.setAttribute("alt", "Book Cover");
 
         var listItemL = document.createElement("LI");                                //creates <li>
         var itemTextL = document.createTextNode(bookNamesArr2[i].language);          //creates text using the array language:
@@ -147,19 +147,10 @@ function bookList5() {
         listItemA.appendChild(itemTextA);
 
         document.getElementById("libro2").appendChild(listItemT);    //appends-adds <h2> to the DOM
-        document.getElementById("libro2").appendChild(image);
+        document.getElementById("libro2").appendChild(image);           //THIS IS WHERE THE CONSOLE ERROR IS 
         document.getElementById("libro2").appendChild(listItemL);    //appends-adds <li> to the DOM
         document.getElementById("libro2").appendChild(listItemA);    //appends-adds <li> to the DOM
     }
 }
 
 bookList5();
-
-/*
-var x = document.createElement("IMG");
-    x.setAttribute("src", "img_pulpit.jpg");
-    x.setAttribute("width", "304");
-    x.setAttribute("height", "228");
-    x.setAttribute("alt", "The Pulpit Rock");
-    document.body.appendChild(x);
-    */
