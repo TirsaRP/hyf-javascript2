@@ -52,7 +52,8 @@ Convert the task durations to hours, instead of minutes.
 Filter out everything that took less than two hours (i.e., remove from the collection)
 Multiply the each duration by a per-hour rate for billing (you can decide yourself what Maartje should make per hour) and sum it all up.
 Output a formatted Euro amount.
-Don't forget to use => */
+Don't forget to use =>  */
+
 let thursday = [
     { activity: "get kids ready for school", hours: 1 },
     { activity: "drop off/pick up kids at school", hours: 1 },
@@ -73,15 +74,15 @@ let friday = [
 let activities = thursday.concat(friday);       //combines both arrays
 //console.log(activities);
 
-let overTwo= activities.filter(item=> item.hours >= 2);    // creates a new array that only includes the activities that took 2 hours or more 
-console.log(overTwo); 
+let overTwo= activities.filter(item=> item.hours > 2);    // creates a new array that only includes the activities that were over 2 hours 
+//console.log(overTwo); 
 
-let hourlyRates= underTwo.map(item=> item.hours*25.00);        // creates an array with the hourly rates 
+let hourlyRates= overTwo.map(item=> item.hours*25.00);        // creates an array with the hourly rates 
 //console.log(hourlyRates);
 
-let payment= hourlyRates.reduce( (accumulator, currentValue) => accumulator + currentValue );  //reduces payment to 200 which is all the hourly rates combined 
+let payment= hourlyRates.reduce( (accumulator, currentValue) => accumulator + currentValue );  //reduces payment to 575 which is all the hourly rates combined 
 
 let totalEuros= payment.toLocaleString('en-US', {style: 'currency', currency: 'EUR'});
-//console.log(totalEuros);                           //200 euros
+//console.log(totalEuros);                           //575 euros
 
 console.log("I would get paid: " + totalEuros);
