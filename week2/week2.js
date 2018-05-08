@@ -17,9 +17,8 @@ console.log("The doubled numbers are", newNumbers); // [2, 6]
 // 1) Rewrite the above program using map and filter don't forget to use =>
 
 let numArray = [1, 2, 3, 4];
-let newNumbersArray = [];
 
-newNumbersArray = numArray.filter(value => value % 2 !== 0);       //an array of [1,3]
+let newNumbersArray = numArray.filter(value => value % 2 !== 0);       //an array of [1,3]
 console.log(newNumbersArray);
 
 var times2 = newNumbersArray.map(value => value * 2);               //1*2=2, 3*2=6. output 2, 6
@@ -80,7 +79,7 @@ let overTwo= activities.filter(item=> item.hours > 2);    // creates a new array
 let hourlyRates= overTwo.map(item=> item.hours*25.00);        // creates an array with the hourly rates 
 //console.log(hourlyRates);
 
-let payment= hourlyRates.reduce( (accumulator, currentValue) => accumulator + currentValue );  //reduces payment to 575 which is all the hourly rates combined 
+let payment= hourlyRates.reduce( (total, rate) => total + rate );  //reduces payment to 575 which is all the hourly rates combined 
 
 let totalEuros= payment.toLocaleString('en-US', {style: 'currency', currency: 'EUR'});
 //console.log(totalEuros);                           //575 euros
